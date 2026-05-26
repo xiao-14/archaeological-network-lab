@@ -1,80 +1,72 @@
-# Ordos Mobility Network Lab
+Project Introduction
 
-一个面向博士申请研究计划的正式科研网站雏形：从器物流通到人群移动，支持墓葬/遗址数据上传、器物组合网络、数量权重网络、时间层、空间层、属性层、多层证据网络，以及阈值稳定性分析。
+This project is a web-based platform for archaeological network analysis and visualization designed for Digital Archaeology and Digital Humanities research.
 
-## 本次升级重点
+The platform transforms archaeological datasets into interactive network structures and visualizes relationships between sites, burials, artifacts, attributes, spatial proximity, and temporal patterns.
 
-- 后端 API 从 `/upload` 改为 `/api/analyze`，更接近正式科研服务结构。
-- 增加 `/health`，便于部署平台健康检查。
-- 支持 Jaccard、Overlap、Cosine 三种相似度。
-- 空间层改用 Haversine 球面距离，而不是直接用经纬度欧氏距离。
-- 增加数量权重层，避免所有问题都被二值化。
-- 增加 multiplex 多层证据网络，将器物、空间、时间证据合并。
-- 增加数据质量提示和考古解释边界，避免把中心性直接等同于政治中心。
-- 前端修复 `network` 变量重置问题，使用 `useRef` 管理 vis-network 实例。
-- 前端界面改为正式科研平台风格，可用于展示申博研究计划中的 digital component。
+By integrating computational methods with archaeological interpretation, the system enables researchers to explore social structure, cultural interaction, identity differentiation, ritual organization, and material similarity through network-based analysis.
 
-## 本地运行
+The platform supports multilayer network construction, similarity analysis, interactive visualization, attribute filtering, threshold stability analysis, and publication-style figure export.
 
-### 后端
+The system is designed as a general archaeological network analysis framework and can be applied to mortuary archaeology, settlement archaeology, artifact studies, spatial analysis, and other archaeological datasets.
 
-```bash
-cd backend
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
-```
+Main Features
 
-### 前端
+Network Construction
+Artifact similarity network
+Quantity-based network
+Spatial proximity network
+Temporal network
+Attribute network
+Multiplex network analysis
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+Similarity Methods
+Jaccard Similarity
+Overlap Similarity
+Cosine Similarity
 
-打开 http://localhost:5173
+Network Analysis
+Degree Centrality
+Betweenness Centrality
+Community Detection
+Density Analysis
+Threshold Stability Analysis
 
-## 推荐数据格式
+Interactive Visualization
+Interactive network graph
+Attribute coloring
+Highlight mode
+Multi-value filtering
+Tooltip-based node information
+Zoom and drag interaction
 
-长表格式：
+Export Functions
+Export publication-style PNG figures
+Automatic legend generation
+Automatic parameter display
+Clean academic visualization layout
 
-| 墓葬 | 器物 | 数量 | 时期 | 经度 | 纬度 | 性别 | 等级 |
-|---|---|---:|---|---:|---:|---|---|
-| M1 | 铜刀 | 1 | 春秋早期 | 110.1 | 40.2 | 男 | 高 |
-| M1 | 牌饰 | 2 | 春秋早期 | 110.1 | 40.2 | 男 | 高 |
-| M2 | 铜刀 | 1 | 春秋中期 | 110.4 | 40.1 | 女 | 中 |
+Bilingual Interface
+Chinese / English interface switching
 
-也支持墓葬×器物矩阵，但长表更适合保留时期、坐标和属性。
+Analysis Methods
+Jaccard Similarity
+Overlap Similarity
+Cosine Similarity
+Degree Centrality
+Betweenness Centrality
+Community Detection
 
-## 公开部署建议
+Research Significance
 
-### 前端
+This project combines archaeological interpretation with computational network analysis and Digital Humanities methods.
 
-可部署到 Vercel、Netlify 或 GitHub Pages。构建命令：
+The platform demonstrates how burial data can be transformed into interpretable social networks and provides a framework for exploring:
 
-```bash
-npm run build
-```
+social identity
+mortuary practice
+age differentiation
+gender structure
+cultural interaction
+ritual organization
 
-环境变量：
-
-```bash
-VITE_API_BASE=https://你的后端域名
-```
-
-### 后端
-
-可部署到 Render、Railway、Fly.io、Google Cloud Run 或 VPS。需要设置：
-
-```bash
-ALLOWED_ORIGINS=https://你的前端域名
-MAX_UPLOAD_MB=25
-```
-
-Docker 已包含在 `backend/Dockerfile`。
-
-## 博士申请中的表述建议
-
-This platform will serve as the digital research component of my doctoral project. It operationalises artifact co-occurrence, spatial proximity, chronological association, and multi-layer network evidence into a transparent and reproducible web-based workflow. Rather than claiming to identify fixed ancient roads, the platform reconstructs probable mobility corridors and interaction structures through iterative comparison between computational outputs and archaeological expertise.
