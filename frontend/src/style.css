@@ -1,0 +1,28 @@
+:root { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #1f241f; background: #f6f3ed; }
+body { margin: 0; }
+main { max-width: 1280px; margin: 0 auto; padding: 28px; }
+.hero { display: grid; grid-template-columns: 1.8fr 1fr; gap: 22px; align-items: stretch; margin-bottom: 22px; }
+h1 { margin: 0; font-size: clamp(34px, 5vw, 64px); letter-spacing: -0.04em; }
+.subtitle { font-size: 18px; line-height: 1.65; max-width: 820px; color: #4d564b; }
+.eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: 12px; color: #7a5833; font-weight: 700; }
+.badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.badge { background: #e7dccd; border: 1px solid #cab89f; color: #4b3a25; border-radius: 999px; padding: 7px 11px; font-size: 13px; }
+.card, .panel, .stats, .networkWrap { background: rgba(255,255,255,.78); border: 1px solid #ded5c7; border-radius: 22px; box-shadow: 0 12px 36px rgba(60,45,25,.08); }
+.mission { padding: 22px; line-height: 1.7; }
+.panel { padding: 18px; margin: 18px 0; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(180px, 1fr)); gap: 14px; }
+label { display: flex; flex-direction: column; gap: 7px; font-size: 13px; font-weight: 700; color: #394036; }
+input, select { border: 1px solid #cfc5b4; border-radius: 12px; padding: 10px; background: #fff; font: inherit; }
+input[type="range"] { padding: 0; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+button { border: 0; background: #27462f; color: white; border-radius: 14px; padding: 11px 16px; font-weight: 800; cursor: pointer; }
+button:nth-child(2) { background: #76552d; }
+button:disabled { opacity: .55; cursor: not-allowed; }
+.error { background: #fee2e2; color: #8f1d1d; padding: 12px; border-radius: 14px; margin-top: 12px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 18px; line-height: 1.7; }
+.stats p { margin-bottom: 0; color: #4e554c; }
+.filters { display: flex; gap: 14px; flex-wrap: wrap; align-items: end; }
+.check { flex-direction: row; align-items: center; margin-bottom: 10px; }
+.networkWrap { padding: 10px; }
+.network { height: 650px; border-radius: 18px; background: #ffffff; border: 1px solid #dedede; }
+@media (max-width: 900px) { .hero, .stats { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } main { padding: 16px; } }
