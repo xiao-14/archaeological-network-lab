@@ -9,7 +9,7 @@ import './style.css';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000';
+const API_BASE = "https://archaeological-network-lab.onrender.com";
 
 function ResearchBadge({ children }) { return <span className="badge">{children}</span>; }
 
